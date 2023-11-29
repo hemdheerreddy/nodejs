@@ -7,7 +7,7 @@ const adminroute=require('./routes/admin');
 
 app.use(bodyParser.urlencoded());
 
-app.use(shoproute);
+app.use('/shop',shoproute);
 app.use('/admin',adminroute);
 
 app.use((req,res,next)=>{

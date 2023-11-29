@@ -9,7 +9,7 @@ router.get('/add-product',(req,res,next)=>{
 //path: /admin/add-product method=>POST
 router.post('/add-product',(req,res,next)=>{
     console.log(req.body);
-    res.redirect('/');
+    res.redirect('/shop');
 });
 
 module.exports=router;
