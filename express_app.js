@@ -2,16 +2,13 @@ const express=require('express');
 const bodyParser = require('body-parser');
 const app = express();
 
+const homeroute=require('./routes/shop');
+const productsroute=require('./routes/admin');
+
 app.use(bodyParser.urlencoded());
 
-app.use('/add-product',(req,res,next)=>{
-    res.send('<form action="/product" method="POST"><input type="text" name="message"><input type="number" name="size"><button type="submit">Submit</button></form>');
-});
-
-app.use('/product',(req,res,next)=>{
-    console.log(req.body);
-    res.redirect('/add-product');
-});
+app.use(homeroute);
+app.use(productsroute);
 
 
 app.listen(4000);
